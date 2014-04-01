@@ -55,20 +55,21 @@ public class DetectPrimeNumber {
 		}
 		else
 		{
-			//Find out the half of given number
-			int half=n/2;
-			//If half is 1 then check if if number is 2 or 3
-			if(half ==1)
+			
+			//check if number is even or not
+			if(n%2 ==0)
 			{
-				if(n ==2 || n==3)
+				if(n !=2)
 				{
-					isPrime=true;
+					isPrime=false;
 				}				
 			}
 			else
 			{
+				//Find out the half of given number
+				int half=(int)Math.sqrt(n);
 				//Loop till half and check if number is divisible by any number from 2 to half except the number itself
-				for(int i=2; i<=half;i++)
+				for(int i=3; i<=half;i+=2)
 				{
 					if(n%i ==0)
 					{
